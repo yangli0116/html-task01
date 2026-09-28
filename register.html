@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>AI助教答疑平台 - 用户注册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            width: 420px;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        h2 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 24px;
+        }
+        .item {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #444;
+        }
+        input {
+            width: 100%;
+            height: 42px;
+            padding: 0 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #4080ff;
+        }
+        button {
+            width: 100%;
+            height: 44px;
+            background-color: #4080ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        .tip {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .tip a {
+            color: #4080ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h2>AI助教答疑平台 · 用户注册</h2>
+        <form id="regForm">
+            <div class="item">
+                <label>用户名</label>
+                <input type="text" name="username" placeholder="请输入用户名" required autofocus>
+            </div>
+            <div class="item">
+                <label>邮箱</label>
+                <input type="email" name="email" placeholder="example@xxx.com" required>
+            </div>
+            <div class="item">
+                <label>手机号</label>
+                <input type="tel" name="phone" placeholder="请输入11位手机号" pattern="^1[3-9]\d{9}$" required>
+            </div>
+            <div class="item">
+                <label>密码</label>
+                <input type="password" id="pwd" placeholder="不少于6位字符" required>
+            </div>
+            <div class="item">
+                <label>确认密码</label>
+                <input type="password" id="repwd" placeholder="再次输入密码" required>
+            </div>
+            <button type="submit">完成注册</button>
+        </form>
+        <div class="tip">已有账号？<a href="login.html">前往登录</a></div>
+    </main>
+
+    <script>
+        const regForm = document.getElementById('regForm');
+        regForm.addEventListener('submit', function(e){
+            const pwd = document.getElementById('pwd').value;
+            const repwd = document.getElementById('repwd').value;
+            if(pwd !== repwd){
+                alert("两次输入密码不一致！");
+                e.preventDefault();
+            }else{
+                alert("注册成功！跳转到登录页");
+                location.href="login.html";
+            }
+        })
+    </script>
+</body>
+</html>
