@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS图形hover效果作业</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            padding:50px;
+        }
+        /* 外层深色容器 */
+        .box-wrap{
+            background-color:#1a1a24;
+            padding:120px 80px;
+            display:flex;
+            gap:40px;
+            align-items:center;
+        }
+        /* 通用图形样式：图形本身默认可见！只有文字隐藏 */
+        .shape{
+            width:140px;
+            height:140px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:24px;
+            color:#fff;
+            /* 默认：文字透明看不见，图形本体保留渐变颜色 */
+            color: transparent;
+            /* 默认阴影带向下偏移 */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        /* hover 触发效果 */
+        .shape:hover{
+            transform: translateY(-10px); /* 上移10像素 */
+            box-shadow: 0 0 20px rgba(0,0,0,0.3); /* 阴影偏移改为0 */
+            color:#ffffff; /* hover文字变白显示出来 */
+        }
+        /* 图形1：正方形 橙红渐变 */
+        .shape1{
+            background:linear-gradient(135deg,#ff8855,#ff5566);
+        }
+        /* 图形2：小圆角矩形 青绿渐变 */
+        .shape2{
+            background:linear-gradient(135deg,#22dd88,#22ccaa);
+            border-radius:16px;
+        }
+        /* 图形3：大圆角矩形 紫灰渐变 */
+        .shape3{
+            background:linear-gradient(135deg,#997799,#665588);
+            border-radius:40px;
+        }
+        /* 图形4：正圆形 黄橙渐变 */
+        .shape4{
+            background:linear-gradient(135deg,#ffdd66,#ffaa77);
+            border-radius:50%;
+        }
+        /* 图形5：圆角矩形 深绿渐变 */
+        .shape5{
+            background:linear-gradient(135deg,#447766,#447780);
+            border-radius:12px;
+        }
+        /* 图形6：圆形 淡紫渐变 */
+        .shape6{
+            background:linear-gradient(135deg,#b898c8,#8877aa);
+            border-radius:50%;
+        }
+    </style>
+</head>
+<body>
+<div class="box-wrap">
+    <div class="shape shape1">hover</div>
+    <div class="shape shape2">hover</div>
+    <div class="shape shape3">hover</div>
+    <div class="shape shape4">hover</div>
+    <div class="shape shape5">hover</div>
+    <div class="shape shape6">hover</div>
+</div>
+</body>
+</html>
